@@ -47,6 +47,10 @@ body {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+
+        @media screen and (max-width: 600px) {
+            top:30px; left:20px;
+        }
     }
 
     .effect {
@@ -272,7 +276,10 @@ body {
 }
 
 .block-effect {
-    font-size: calc(8px + 6vw);
+    font-size: 100px;
+    @media screen and (max-width: 600px) {
+        font-size: 40px;
+    }
     
     .block-reveal {
         --t: calc(var(--td) + var(--d));
@@ -283,6 +290,9 @@ body {
         font-family: "Anton", sans-serif;
         font-weight: 400;
         font-style: normal;
+        @media screen and (max-width: 600px) {
+            padding: 0;
+        }
         
         &::after {
             content: "";
@@ -293,6 +303,7 @@ body {
             top: 0;
             left: 0;
             background: var(--bc);
+            border-radius:5px;
         }
 
         &.on{

@@ -36,6 +36,12 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+@media screen and (max-width: 600px) {
+  .background .visual {
+    top: 30px;
+    left: 20px;
+  }
+}
 .background .effect {
   position: absolute;
   top: 0;
@@ -246,7 +252,12 @@ body {
   }
 }
 .block-effect {
-  font-size: calc(8px + 6vw);
+  font-size: 100px;
+}
+@media screen and (max-width: 600px) {
+  .block-effect {
+    font-size: 40px;
+  }
 }
 .block-effect .block-reveal {
   --t: calc(var(--td) + var(--d));
@@ -258,6 +269,11 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+@media screen and (max-width: 600px) {
+  .block-effect .block-reveal {
+    padding: 0;
+  }
+}
 .block-effect .block-reveal::after {
   content: "";
   width: 0%;
@@ -267,6 +283,7 @@ body {
   top: 0;
   left: 0;
   background: var(--bc);
+  border-radius: 5px;
 }
 .block-effect .block-reveal.on {
   animation: revealBlock 0s var(--t) forwards;
