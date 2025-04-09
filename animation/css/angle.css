@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+*{box-sizing:border-box;margin:0;padding:0;color:#000;}
+
+body{
+    display: flex;
+    align-items:center;justify-content:center;
+    background: #111;
+    height:100vh;overflow: hidden;
+}
+.box {
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  width: 200px;
+  height: 200px;
+  border: 2px solid transparent;
+  position: relative;
+  border-radius: 24px;
+  box-sizing: inherit;
+}
+
+.box::before {
+    content: " ";
+    box-sizing: inherit;
+    position: absolute;
+    inset: calc(2px * -1);
+    z-index: -1;
+    border: inherit;
+    border-radius: inherit;
+    background-image: conic-gradient(from var(--angle), #381D6A 80%, #E0D1FF 88%, #E0D1FF 92%, #381D6A 100%);
+    background-origin: border-box;
+    -webkit-mask: linear-gradient(black, black) content-box, linear-gradient(black, black);
+    mask: linear-gradient(black, black), linear-gradient(black, black);
+    -webkit-mask-clip: content-box, border-box;
+    mask-clip: content-box, border-box;
+    mask-composite: exclude;
+    animation: spin 3s linear infinite;
+    transition: 1s;
+}
+
+.box:hover::before {
+    animation-play-state: paused;
+    border-color:#E0D1FF;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    inherits: true; /* 자식 상속 여부 */
+    initial-value: 0turn; /* 0deg */
+}
+
+@keyframes spin {
+    to {
+        --angle: 1turn; /* 360deg */
+    }
+}
+
+@property --text-color {
+    syntax: "<color>";
+    inherits: false; /* 자식 상속 여부 */
+    initial-value: white;
+}
+
+.box{--text-color: red;color:var(--text-color);}
+.box>p{color:var(--text-color);}

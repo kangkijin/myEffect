@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mask Animation</title>
+    <link rel="stylesheet" href="css/mask.css"><!-- scss/mask.scss -->
+</head>
+
+<body>
+    <!-- MASK 1 -->
+    <div class="background">
+        <video src="videos/camera.mp4" id="video" type="video/mp4" loop></video>
+        <div class="visual">
+            <h1 class="block-effect" style="--td: 1.2s">
+                <div class="block-reveal" style="--bc: #4040bf; --d: .1s">Block</div>
+                <div class="block-reveal" style="--bc: #bf4060; --d: .5s">Revealing Effect</div>
+            </h1>
+        </div>
+        <button type="button" class="effect">
+            <div id="container">
+                Make 
+                <div id="flip">
+                    <div><div>work</div></div>
+                    <div><div>lifestyle</div></div>
+                    <div><div>everything</div></div>
+                </div>
+                Awesome!
+            </div>
+            <p id="clickMe">Click here.</p>
+        </button>
+    </div>
+
+    <script>
+        const video = document.querySelector('#video');
+        const effect = document.querySelector('.effect');
+        const blockEffect = document.querySelectorAll('.block-reveal');
+        effect.addEventListener('click', function () {
+            effect.classList.add("on");
+            video.muted = true;
+            video.autoplay = true; 
+            video.play();
+            setTimeout(function(){
+                effect.remove();
+                blockEffect.forEach(function(block) {
+                    block.classList.add("on");
+                });
+            },1500)
+        });
+    </script>
+</body>
+
+</html>

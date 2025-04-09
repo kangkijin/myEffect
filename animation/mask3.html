@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mask Animation 3</title>
+    <link rel="stylesheet" href="css/mask.css">
+</head>
+
+<body>
+    <!-- MASK 3 -->
+    <div class="background3">
+        <video src="videos/sea.mp4" id="video3" type="video/mp4" loop></video>
+        <button type="button" class="effect"></button>
+    </div>
+
+    <script>
+        const video = document.querySelector('#video3');
+        const effect = document.querySelector('.effect');
+        effect.addEventListener('click', function () {
+            effect.classList.add("on");
+            video.muted = true;
+            video.autoplay = true; 
+            video.play();
+        });
+    </script>
+</body>
+
+</html>
