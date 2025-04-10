@@ -70,11 +70,20 @@
                     <span class="event"><img src="images/tada.jpeg" alt=""></span>
                     <span>AREA SHOWING</span>
                 </div>
-                <div class="txt3"><span>CHECK THIS SCRIPT</span></div>
+                <div class="txt3"><span>CHECK THIS STYLE & SCRIPT</span></div>
                 <!-- <div class="btn"><img src="img/indexA/sub/btn_txtArea.png" alt=""></div> -->
             </div>
         </div>
 
+        <div id="footer">
+            <p class="myName"><span>KKJ</span></p>
+            <ul class="footerList">
+                <li>Phone: 010-0000-0000</li>
+                <li><a href="#none"><span class="move">GITHUB<i>GITHUB</i></span></a></li>
+                <li><a href="#none"><span class="move">NOTION<i>NOTION</i></span></a></li>
+                <li>MADE BY KANG KI JIN</li>
+            </ul>
+        </div>
         
     </div>
 
@@ -132,6 +141,29 @@
             onLeaveBack: () => {
                 document.querySelector('.txtArea').classList.remove('ani');
             },
+        });
+
+        ScrollTrigger.create({
+            trigger: '#footer',
+            onEnter: () => {
+                document.querySelector('.myName').classList.add('ani');
+            },
+            onLeaveBack: () => {
+                document.querySelector('.myName').classList.remove('ani');
+            },
+        });
+        gsap.to('#footer', {
+            scrollTrigger: {
+                trigger: '#footer',
+                start:"top top",
+                end: "bottom bottom",
+                onEnter: () => {
+                    document.querySelector('.myName').classList.add('ani');
+                },
+                onLeaveBack: () => {
+                    document.querySelector('.myName').classList.remove('ani');
+                },
+            }
         });
 
 

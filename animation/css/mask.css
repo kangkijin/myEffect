@@ -27,6 +27,15 @@ ol, ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+i {
+  font-style: normal;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -386,6 +395,11 @@ body.hidden {
   text-align: center;
   font-family: "Anton", sans-serif;
   font-weight: 400;
+  background-image: url(../images/space.gif);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 #section3 {
@@ -406,9 +420,8 @@ body.hidden {
   font-size: 200px;
   font-family: "Anton", sans-serif;
   font-weight: 400;
-  background-image: url(../images/space.gif);
+  background-image: url(../images/dyestuffs.gif);
   background-position: 50% 50%;
-  background-size: cover;
   background-repeat: no-repeat;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -446,6 +459,60 @@ body.hidden {
   transition-delay: 1s;
   width: 100px;
   margin: 0 30px 0 30px !important;
+}
+
+#footer {
+  position: relative;
+  z-index: 1;
+  padding: 100px 30px 30px;
+  width: 100%;
+}
+#footer .myName {
+  overflow: hidden;
+}
+#footer .myName span {
+  transform: translateY(300px);
+  transition: 0.4s;
+  display: inline-block;
+  font-size: 200px;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  background-image: url(../images/water.jpg);
+  background-position: 50% 50%;
+  background-size: 100%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-repeat: no-repeat;
+  transition-delay: 0.4s;
+}
+#footer .myName.ani span {
+  transform: translateY(0);
+}
+#footer .footerList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#footer .footerList li {
+  color: #fff;
+  font-size: 20px;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+}
+#footer .footerList li a {
+  display: block;
+  overflow: hidden;
+  height: 31px;
+}
+#footer .footerList li a .move {
+  display: block;
+  transition: 0.4s;
+}
+#footer .footerList li a .move i {
+  display: block;
+}
+#footer .footerList li a:hover .move {
+  transform: translateY(-31px);
 }
 
 /*# sourceMappingURL=mask.css.map */

@@ -12,6 +12,8 @@
 }
 img {border:0;max-width: 100%;}
 ol, ul {list-style:none;}
+a {text-decoration: none;color:inherit;}
+i {font-style: normal;}
 
 
 //font Anton
@@ -40,6 +42,13 @@ ol, ul {list-style:none;}
     transition:0.4s;
 }
 @mixin tadaY2{
+    transform:translateY(0);
+}
+@mixin badaY{
+    transform:translateY(300px);
+    transition:0.4s;
+}
+@mixin badaY2{
     transform:translateY(0);
 }
 
@@ -409,6 +418,11 @@ body {
     font-size: 70px; text-align: center;
     font-family: "Anton", sans-serif;
     font-weight:400;
+    background-image:url(../images/space.gif);
+    background-position: 50% 50%;
+    background-repeat:no-repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip:text;
 }
 
 #section3 {
@@ -423,9 +437,8 @@ body {
         font-size:200px;
         font-family: "Anton", sans-serif;
         font-weight:400;
-        background-image:url(../images/space.gif);
+        background-image:url(../images/dyestuffs.gif);
         background-position: 50% 50%;
-        background-size:cover;
         background-repeat:no-repeat;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip:text;
@@ -471,6 +484,65 @@ body {
                 transition-delay:1s;
                 width:100px;
                 margin:0 30px 0 30px !important;
+            }
+        }
+    }
+}
+
+#footer{
+    position: relative; z-index: 1;
+    padding: 100px 30px 30px;
+    width: 100%;
+
+    .myName {
+        overflow:hidden;
+        span {
+            @include badaY;
+            display: inline-block;
+            font-size: 200px;
+            font-family: "Anton", sans-serif;
+            font-weight:400;
+            background-image:url(../images/water.jpg);
+            background-position: 50% 50%;
+            background-size:100%;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip:text;
+            background-repeat:no-repeat;
+            transition-delay:0.4s;
+        }
+        &.ani {
+            span {
+                @include badaY2;
+            }
+        }
+    }
+
+    .footerList {
+        display: flex;
+        align-items: center; justify-content: space-between;
+
+        li {
+            color: #fff;
+            font-size: 20px;
+            font-family: "Anton", sans-serif;
+            font-weight:400;
+
+            a {
+                display: block;
+                overflow: hidden;
+                height: 31px;
+                .move {
+                    display: block;
+                    transition: 0.4s;
+                    i {
+                        display: block;
+                    }
+                }
+                &:hover {
+                    .move{
+                        transform:translateY(-31px);
+                    }
+                }
             }
         }
     }
