@@ -60,7 +60,19 @@
         </div>
 
         <div id="section3" class="section">
-            
+            <h2 class="subTitle">AWESOME</h2>
+            <div class="txtArea">
+                <div class="txt1">
+                    <span>TEXT ANIMATION</span>
+                </div>
+                <div class="txt2">
+                    <span>EFFECT THIS</span>
+                    <span class="event"><img src="images/tada.jpeg" alt=""></span>
+                    <span>AREA SHOWING</span>
+                </div>
+                <div class="txt3"><span>CHECK THIS SCRIPT</span></div>
+                <!-- <div class="btn"><img src="img/indexA/sub/btn_txtArea.png" alt=""></div> -->
+            </div>
         </div>
 
         
@@ -110,6 +122,16 @@
                     onLeaveBack: () => li.classList.remove('active')
                 }
             });
+        });
+
+        ScrollTrigger.create({
+            trigger: '.txtArea .txt3',
+            onEnter: () => {
+                document.querySelector('.txtArea').classList.add('ani');
+            },
+            onLeaveBack: () => {
+                document.querySelector('.txtArea').classList.remove('ani');
+            },
         });
 
 
