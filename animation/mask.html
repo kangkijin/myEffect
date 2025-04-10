@@ -10,14 +10,17 @@
     <script src="js/jquery.easeScroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
-    <!-- <script type="text/javascript" src="js/mask.js"></script> -->
+    <script type="text/javascript" src="js/mask.js"></script>
 
     <link rel="stylesheet" href="css/mask.css"><!-- scss/mask.scss -->
 </head>
 
+<!-- MASK 1 -->
 <body class="hidden">
-    <!-- MASK 1 -->
-    <button type="button" class="effective">
+    <!-- 마우스 -->
+	<div id="follower"></div>
+    
+    <button type="button" class="effective click">
         <div id="container">
             Make 
             <div id="flip">
@@ -76,11 +79,20 @@
         </div>
 
         <div id="footer">
-            <p class="myName"><span>KKJ</span></p>
+            <div class="flex">
+                <p class="myName"><span>KKJ</span></p>
+                <div class="hoverContainer hover">
+                    <h2 class="hoverTitle">Hover Here</h2>
+                    <h2 class="hoverTitle">To Learn More</h2>
+                    <div class="text">
+                        <div class="hoverInner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate tortor sit amet felis accumsan, at ornare diam placerat. Cras bibendum lobortis quam ut venenatis. Mauris eu mi in erat sagittis cursus. Vivamus in euismod diam, et interdum odio. Suspendisse vel rhoncus metus, eu auctor neque. Lorem ipsum dolor sit amet.</div>
+                    </div>
+                </div>
+            </div>
             <ul class="footerList">
                 <li>Phone: 010-0000-0000</li>
-                <li><a href="#none"><span class="move">GITHUB<i>GITHUB</i></span></a></li>
-                <li><a href="#none"><span class="move">NOTION<i>NOTION</i></span></a></li>
+                <li><a href="#none" class="click"><span class="move">GITHUB<i>GITHUB</i></span></a></li>
+                <li><a href="#none" class="click"><span class="move">NOTION<i>NOTION</i></span></a></li>
                 <li>MADE BY KANG KI JIN</li>
             </ul>
         </div>
