@@ -76,7 +76,6 @@ body.hidden {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
 }
 .background video {
   position: fixed;
@@ -355,7 +354,14 @@ body.hidden {
   z-index: 1;
 }
 .showList li {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: 0.6s;
   text-align: left;
+}
+.showList li.active {
+  transform: translateY(0);
+  opacity: 1;
 }
 .showList li:nth-child(2n) {
   text-align: right;
@@ -368,6 +374,17 @@ body.hidden {
   height: 400px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 8px;
+}
+
+.projectTitle {
+  position: sticky;
+  top: 100px;
+  z-index: 10;
+  color: #fff;
+  font-size: 70px;
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=mask.css.map */

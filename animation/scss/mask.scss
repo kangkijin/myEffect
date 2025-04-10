@@ -26,6 +26,15 @@ ol, ul {list-style:none;}
     border: $bor;
     color: $col;
 }
+@mixin dadaY{
+    transform:translateY(50px);
+    opacity: 0;
+    transition:0.6s;
+}
+@mixin dadaY2{
+    transform:translateY(0);
+    opacity: 1;
+}
 
 body {
     overflow-x: hidden;
@@ -76,7 +85,6 @@ body {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    overflow: hidden;
     // background: url(../images/bg_brown.jpg) no-repeat center;
     // background-size: 100%;
 
@@ -368,11 +376,17 @@ body {
     position: relative; z-index: 1;
 
     li {
+        @include dadaY;
         text-align: left;
+
+        &.active{
+            @include dadaY2;
+        }
+
         &:nth-child(2n){
             text-align: right;
         }
-
+        
         div{
             display: inline-flex;
             align-items: center;justify-content: center;
@@ -381,4 +395,11 @@ body {
             border-radius:8px;
         }
     }
+}
+.projectTitle {
+    position: sticky; top:100px; z-index:10;
+    color:#fff; 
+    font-size: 70px; text-align: center;
+    font-family: "Anton", sans-serif;
+    font-weight:400;
 }
