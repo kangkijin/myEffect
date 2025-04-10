@@ -453,6 +453,7 @@ body.hidden {
   background-repeat: no-repeat;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
 }
 
 #section3 {
@@ -478,6 +479,7 @@ body.hidden {
   background-repeat: no-repeat;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
 }
 #section3 .txtArea > div {
   display: flex;
@@ -540,6 +542,7 @@ body.hidden {
   background-size: 100%;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   background-repeat: no-repeat;
   transition-delay: 0.4s;
 }

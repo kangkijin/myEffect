@@ -469,6 +469,7 @@ body {
     background-repeat:no-repeat;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip:text;
+    background-clip:text;
 }
 
 #section3 {
@@ -488,6 +489,7 @@ body {
         background-repeat:no-repeat;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip:text;
+        background-clip:text;
     }
     
     .txtArea {
@@ -559,6 +561,7 @@ body {
             background-size:100%;
             -webkit-text-fill-color: transparent;
             -webkit-background-clip:text;
+            background-clip:text;
             background-repeat:no-repeat;
             transition-delay:0.4s;
         }
