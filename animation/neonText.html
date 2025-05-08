@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXT Animation</title>
+    <link rel="shortcut icon" href="favicon.png" />
+    
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.easeScroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+
+    <link rel="stylesheet" href="css/text.css"><!-- scss/mask.scss -->
+</head>
+
+<!-- Neon text event -->
+<body class="hidden">
+
+    <main class="{{color}}" ng-app="app" ng-controller="neon">
+        <div class="bg"></div>
+        <input autofocus id="focus" class="input-text" type="text" name="userName"
+        ng-model="user.name"
+        ng-model-options="{ getterSetter: true }" />
+        
+        <div class="buttons">
+            <button class="btn-pink" ng-click="getColor('pink')"></button>
+            <button class="btn-yellow" ng-click="getColor('yellow')"></button>
+            <button class="btn-green" ng-click="getColor('green')"></button>
+            <button class="btn-blue" ng-click="getColor('blue')"></button>
+        </div>
+        
+        <div class="wrapper">
+            <h1 class="font1">
+                <span ng-bind="user.name()"></span>
+                <h2 class="font2">Neon by @interaminense</h2>
+            </h1>
+        </div>
+    </main>
+
+    <script>
+        var app = angular.module('app', []);
+
+        app.controller('neon', function($scope, $element){
+            var _name = 'Neon text';
+            $scope.user = {
+                name: function(newName) {
+                    return arguments.length ? (_name = newName) : _name;
+                }
+            };
+            $scope.getColor = function(color){
+                $scope.color = color;
+            };
+            var _color = ['pink', 'yellow', 'green', 'blue'];
+            $scope.getColor(_color[Math.floor((Math.random() * 3) + 1)]);
+        });
+
+    </script>
+</body>
+
+</html>
